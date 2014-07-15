@@ -1,3 +1,4 @@
+<?php
 /* Crea el registro */
 $record =(!empty($_SERVER['REQUEST_TIME'])?date('r', $_SERVER['REQUEST_TIME']):date('r')).'|';
 $record.=(!empty($_SERVER['REMOTE_ADDR'])?$_SERVER['REMOTE_ADDR']:'-').'|';
@@ -14,3 +15,4 @@ $est = fopen("estadisticas.txt", "a");
 /* Escribe el registro */
 fwrite($est, $record);
 fclose($est);
+?>
